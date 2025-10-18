@@ -9,7 +9,9 @@ function cargarSeriesEnTabla(series: Serie[]): void {
         trElement.innerHTML = `<td>${s.id}</td>   
                             <td>${s.name}</td>
                             <td>${s.channel}</td>
-                            <td>${s.seasons}</td>`;
+                            <td>${s.seasons}</td>
+                            <td>${s.description}</td>
+                            <td><a href="${s.link}" class="btn btn-primary" target="_blank">Ver</a></td>`;
         seriesTbody.appendChild(trElement);
     });
      agregarFilaPromedio(series);
@@ -20,7 +22,8 @@ function agregarFilaPromedio(series: Serie[]): void {
     let trPromedio = document.createElement("tr");
     trPromedio.className = "filaProm";
     trPromedio.innerHTML = `<td colspan="3">Seasons average:</td>
-                            <td>${promedio}</td>`;
+                            <td>${promedio}</td>
+                            <td colspan="2"></td>`;
     seriesTbody.appendChild(trPromedio);
 }
 
